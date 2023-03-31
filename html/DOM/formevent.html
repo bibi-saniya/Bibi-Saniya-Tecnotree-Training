@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>8</title>
+    </head>
+    
+<body>
+<h1>A Form</h1>
+    <label for="name">NAME:</label>
+    <input type="text" id="name" name="name" placeholder="enter name"><br><br>
+    <label for="email">EMAIL-ID:</label>
+    <input type="email" id="email" name="email" placeholder="enter email-id"><br><br>
+    <button type="submit" id="btn">SUBMIT</button>
+    
+
+<script>
+    
+    var btn=document.getElementById("btn");
+
+    btn.addEventListener("click",function(){
+   
+        let name=document.getElementById("name").value;
+        let email=document.getElementById("email").value;
+        console.log(name);
+        console.log(email);
+    
+    });
+
+       
+</script>
+
+</body>
+</html>

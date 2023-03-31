@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Countdown Timer</title>
+    <style>
+        .countdown {
+  margin: 100px auto;
+  width: 500px;
+  text-align: center;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.countdown-time {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 50px;
+  font-weight: bold;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.countdown-label {
+  width: 100px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="countdown">
+      <div class="countdown-timer">
+        <div id="days" class="countdown-time"></div>
+        <div id="hours" class="countdown-time"></div>
+        <div id="minutes" class="countdown-time"></div>
+        <div id="seconds" class="countdown-time"></div>
+      </div>
+      <div class="countdown-labels">
+        <div class="countdown-label">Days</div>
+        <div class="countdown-label">Hours</div>
+        <div class="countdown-label">Minutes</div>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
+    <script >
+        const countdownDate = new Date("2023-04-01T00:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const timeRemaining = countdownDate - now;
+
+  const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+}, 1000);
+
+    </script>
+  </body>
+</html>

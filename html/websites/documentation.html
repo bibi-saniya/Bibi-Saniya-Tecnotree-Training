@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            documentation
+        </title>
+        <style>
+            .container {
+  display: flex;
+}
+
+.sidebar {
+  width: 550px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+#additional-info {
+  flex: 1;
+  padding: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  color: #000;
+  font-weight: bold;
+}
+header {
+  background-color: #6d1212;
+  color: #fff;
+  padding: 1em;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+  margin-right: 1em;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.hidden {
+  display: none;
+}
+footer {
+  background-color: #6d1212;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+        </style>
+    </head>
+    <body>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Contact</a></li>
+           
+          </ul>
+        </nav>
+      </header>
+            <div class="container">
+              <div class="sidebar">
+                <ul>
+                  <li><button id="toggle-btn">Project Proposal</button></li>
+                  <li><a href="#topic2">Project Plan</a></li>
+                  <li><a href="#topic3">Important Dates</a></li>
+                  <!-- Add more menu items here -->
+                </ul>
+              </div>
+              <div id="additional-info" class="hidden">
+                <h1>Project charter</h1>
+                  <p>A project charter is another key project documentation example. This document lays the foundation for the project by covering the high-level project planning. It needs to outline how the business goals of the project will be achieved by explaining the key requirements, budget, tasks, roles, and responsiblities of the project. It’s the first document you write after your project proposal is formally approved.</p>
+                  
+                  <h1>Project plan</h1>
+                  <p>After the high-level planning is complete, the project manager creates a more detailed project plan. It serves as a roadmap for the project, defining the key project milestones and placing them on a timeline. This document evolves together with the project, capturing all changes and decisions and facilitating communication among project stakeholders.</p>
+              </div>
+            </div>
+            
+              <div class="content1">
+                <section id="topic1">
+                  <h1>The value of project documentation</h1>
+                    <p>The first and perhaps the most important reason why you should document your project is simple – writing things down forces you to think through your idea and to verify if it actually makes sense. It also makes your project much easier to manage by helping your team to:
+                    
+                    Clarify the project expectations and objectives
+                    Break down the work into manageable blocks
+                    Plan and assign resources
+                    Ensure that all stakeholders are informed about the progress</p>
+                </section>
+                <section id="topic2">
+                  <h1>hoosing the right documentation software</h1>
+There are many different tools you can use to document a project – Google Docs, Confluence (and a variety of Confluence alternatives), different types of internal wikis and knowledge bases, and more.
+
+Depending on the size of your team and your approach to project management, your requirements may differ. Some teams need complex solutions with advanced features, such as built-in approval workflows and automated tasks, while others prefer simpler and easier tools with no learning curve. Whatever tool you choose,
+ make sure all project stakeholders know how to use it.
+                </section>
+                <section id="topic3">
+                  <h1>Organize all project documentation in one place</h1>
+<p>Project-related communication tends to scatter across meetings, chat, email, and shared drives, leaving your team without a single source of truth. Instead, bring all project-related documents together in one place and don't waste time hunting 
+through outdated Confluence pages or stale emails.</p>
+                </section>
+                
+              </div>
+              <footer>
+                <p>&copy; My Documentation 2023</p>
+              </footer>
+              <script>
+                alert("Documentation");
+                const toggleBtn = document.getElementById("toggle-btn");
+      const additionalInfo = document.getElementById("additional-info");
+      
+      toggleBtn.addEventListener("click", function () {
+        additionalInfo.classList.toggle("hidden");
+        if (additionalInfo.classList.contains("hidden")) {
+          toggleBtn.innerHTML = "Project Proposal";
+        } else {
+          toggleBtn.innerHTML = "Project Proposal";
+        }
+      });
+              </script>
+              
+        
+          
+    </body>
+</html>

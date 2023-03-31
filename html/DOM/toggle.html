@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head><title>6</title></head>
+    <style>
+        .dark-mode{
+            background-color:lightgray;
+
+        }
+    </style>
+    <body>
+        <h1>toggle the background color of the body between white and light gray.</h1>
+        <p id="b">hello mysurians,to know more about your city,click me!!!</p>
+        <button id="a">change paragraph</button>
+        
+        <button id="c">New button for toggle dark/white</button>
+        <script>
+        var button=document.getElementById("a");
+          button.addEventListener("click",function(){
+            var sd=document.getElementById("b");
+           sd.textContent="Hey you know more about your city now......";
+           });
+           var button=document.getElementById("c");
+          button.addEventListener("click",function(){
+            var cd=document.body;
+            cd.classList.toggle("dark-mode");
+           });
+        </script>
+    </body>
+
+</html>

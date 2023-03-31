@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head><title>5</title></head>
+    <body>
+        <h1> adding an event listener to the new button.</h1>
+        <p id="b">hello mysurians,to know more about your city,click me!!!</p>
+        <button id="a">change paragraph</button>
+        
+        <button id="c">Exit</button>
+        <script>
+        var button=document.getElementById("a");
+          button.addEventListener("click",function(){
+            var sd=document.getElementById("b");
+           sd.textContent="Hey you know more about your city now......";
+           });
+           var button=document.getElementById("c");
+          button.addEventListener("click",function(){
+            alert("Are you Sure");
+             window.close();//closing the tab
+           });
+        </script>
+    </body>
+
+</html>
+
+    

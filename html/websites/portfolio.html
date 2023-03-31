@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Portfolio</title>
+    <style>
+        /* Set the global styles for the body and headings */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+h2, h3 {
+  font-weight: normal;
+  margin-top: 1em;
+}
+
+/* Style the header and navigation bar */
+header {
+  background-color: #6d1212;
+  color: #fff;
+  padding: 1em;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 1em;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Style the main content area */
+main {
+  margin: 2em auto;
+  max-width: 800px;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 2em;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Style the footer */
+footer {
+  background-color: #6d1212;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+img{
+  float:right;
+}
+.hidden {
+  display: none;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+        <p><img src="r.jpg" width="160" height="140">I am a talented, ambitious and hardworking individual, with broad skills and experience in digital and printed marketing, social media and leading projects. Furthermore, I am adept at handling multiple tasks on a daily basis competently and at working well under pressure.
+          A key strength is communication; building strong relationships with people in order to deliver the best results.
+          
+          Recently, I completed an Open degree, including Business and Design modules at the Open University and I am now fully employed by Clearly Presented as a Digital Media Manager.</p>
+      </section>
+      
+      <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            <h3>Database Management System</h3>
+            <p>Database Management System (DBMS) software applications essentially structure and organize data files to provide easy access and standard data assortment. It essentially categorizes the data system so that the user can derive the required information from heaps of data</p>
+            
+          </li>
+          <li>
+            <h3>Computer Graphics</h3>
+            <p>Description of the project and your role in it.</p>
+            <p id="additional-info" class="hidden">The Graphic Designer job description includes the entire process of defining requirements, visualizing and creating graphics including illustrations, logos, layouts and photos. You'll be the one to shape the visual aspects of websites, books, magazines, 
+              product packaging, exhibitions and more.</p>
+              <button id="toggle-btn">Show more</button>
+          </li>
+          
+        </ul>
+      </section>
+      
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>Skill 1</li>
+          <li>Skill 2</li>
+          <li>Skill 3</li>
+        </ul>
+      </section>
+      
+      <section id="resume">
+        <h2>Resume</h2>
+        <p>Provide a summary of your work experience, education, and any relevant qualifications or certifications.</p>
+        <a href="#">Download Resume</a>
+      </section>
+      
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Mobile:+91 123456789<br>Email-id:abc@gmail.com</p>
+      </section>
+    </main>
+    
+    <footer>
+      <p>&copy; My Portfolio 2023</p>
+    </footer>
+    <script>
+        alert("Portfolio");
+        const toggleBtn = document.getElementById("toggle-btn");
+      const additionalInfo = document.getElementById("additional-info");
+      
+      toggleBtn.addEventListener("click", function () {
+        additionalInfo.classList.toggle("hidden");
+        if (additionalInfo.classList.contains("hidden")) {
+          toggleBtn.innerHTML = "Show more";
+        } else {
+          toggleBtn.innerHTML = "Show less";
+        }
+      });
+        
+    </script>
+  </body>
+</html>

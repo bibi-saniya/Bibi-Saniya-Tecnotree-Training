@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <title>My E-commerce Website</title>
+    <style>/* Global styles */
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        
+        body {
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          line-height: 1.5;
+          background-color: #f8f8f8;
+        }
+        
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+        
+        a {
+          color: #333;
+          text-decoration: none;
+        }
+        
+        ul {
+          list-style: none;
+        }
+        
+        button {
+          border: none;
+          background-color: #333;
+          color: #fff;
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        
+        /* Header */
+        header {
+         
+          justify-content: space-between;
+         
+          background-color: #fff;
+          padding: 20px;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo img {
+          max-height: 50px;
+        }
+        
+        nav ul {
+          display: flex;
+        }
+        
+        nav li {
+          margin-left: 20px;
+        }
+        
+        
+        /* Main content */
+        main {
+          padding-top: 80px;
+          padding-bottom: 40px;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        
+        .featured-products, .new-arrivals {
+          margin-bottom: 40px;
+        }
+        
+        .product {
+          background-color: #fff;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+          padding: 20px;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        
+        .product h3 {
+          margin-top: 10px;
+          font-size: 20px;
+        }
+        
+        .product p {
+          margin-top: 10px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+          background-color: #333;
+          color: #fff;
+          padding: 20px;
+          text-align: center;
+        }
+        
+       
+        .hidden {
+  display: none;
+}
+        </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="img111.png" alt="My E-commerce Website">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      
+    </header>
+    <main>
+      <section class="featured-products">
+        <h1>Featured Products</h1>
+        <div class="product">
+          <img src="img22.jpg" height="500" width="500">
+          <h3>Fashion</h3>
+          <p>$99.99</p>
+          <button id="a">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="img33.jpg" alt="Product 2" height="500" width="500">
+          <h3>Personal Care</h3>
+          <p>$149.99</p>
+          <button id="a">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="img44.jpg" alt="Product 3" height="500" width="500">
+          <h3>Electronics</h3>
+          <p>$199.99</p>
+          <button id="a">Add to Cart</button>
+        </div>
+      </section>
+      <section id="additional-info" class="hidden">
+        <h2>New Arrivals</h2>
+        <div class="product">
+          <img src="img55.jpg" alt="Product 4" height="500" width="500">
+          <h3>Grocery</h3>
+          <p>$79.99</p>
+          <button id="a">Add to Cart</button>
+        </div>
+        
+        <div class="product">
+          <img src="img66.jpg" alt="Product 6" height="500" width="500">
+          <h3>Cosmetics</h3>
+          <p>$129.99</p>
+          <button id="a">Add to Cart</button>
+        </div>
+      </section>
+      <button id="toggle-btn">Show more</button>
+    </main>
+    <footer>
+      <div class="contact">
+        <p>123 Main Street,Mysore</p>
+        <p>newsite@commerce.com</p>
+      </div>
+    </footer>
+    <script>
+        var button = document.getElementById("a");
+
+// Add an event listener to the button
+button.addEventListener("click", function() {
+  alert("Item Added");
+  
+});
+const toggleBtn = document.getElementById("toggle-btn");
+      const additionalInfo = document.getElementById("additional-info");
+      
+      toggleBtn.addEventListener("click", function () {
+        additionalInfo.classList.toggle("hidden");
+        if (additionalInfo.classList.contains("hidden")) {
+          toggleBtn.innerHTML = "Show more";
+        } else {
+          toggleBtn.innerHTML = "Show less";
+        }
+      });
+
+        </script>
+       </body>
+       </html>

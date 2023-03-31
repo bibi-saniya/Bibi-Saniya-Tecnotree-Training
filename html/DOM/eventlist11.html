@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head><title>11</title></head>
+<body>
+<h1>evenlistener list</h1>
+<ul id="myList">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+<script>
+var myList = document.getElementById('myList');
+
+   myList.addEventListener('click', function(event) {
+  // Do something when an item in the list is clicked
+    
+  alert(event.target.innerText + ' was clicked!');
+    });
+  
+  
+
+  
+  </script>
+
+</body>
+</html>

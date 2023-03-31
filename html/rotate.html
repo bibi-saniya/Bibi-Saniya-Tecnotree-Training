@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head><title>rotation</title></head>
+    <body>
+        <script>
+            // Define the string to be rotated
+            let str = "Koding && Learning";
+
+            // Define the rotation function
+            function rotateString() {
+           // Remove the last character from the string and save it in a variable
+            let lastChar = str.charAt(str.length - 1);
+
+            // Remove the last character from the string
+            str = str.slice(0, str.length - 1);
+
+            // Attach the last character to the front of the string
+            str = lastChar + str;
+
+             // Print the rotated string to the console
+            console.log(str);
+           }
+
+            // Call the rotation function every 1000 milliseconds (1 second)
+            setInterval(rotateString, 1000);
+        </script>
+    </body>
+</html>
+

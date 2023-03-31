@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head><title>date and time</title></head>
+    <body>
+        <script>
+       /// Create an array of weekday names
+          const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+         // Get the current date and time
+           const now = new Date();
+
+         // Get the weekday name from the weekdays array using the getDay() method
+           const weekday = weekdays[now.getDay()];
+
+          // Get the hours, minutes, and seconds from the Date object
+         let hours = now.getHours();
+         let minutes = now.getMinutes();
+         let seconds = now.getSeconds();
+
+         // Determine whether it's AM or PM and convert hours to 12-hour format
+         let amOrPm = hours >= 12 ? "PM" : "AM";
+         hours = hours % 12;
+         hours = hours ? hours : 12;
+
+         // Create a string with the formatted date and time
+         const output = `Today is: ${weekday}\nCurrent time is: ${hours} ${amOrPm} : ${minutes} : ${seconds}`;
+
+         // Log the output to the console
+-         console.log(output);
+
+        </script>
+    </body>
+</html>

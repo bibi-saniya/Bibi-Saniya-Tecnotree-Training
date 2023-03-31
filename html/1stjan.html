@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            1st January is being a Sunday
+        </title>
+    </head>
+    <body>
+        <h1>1st January is being a Sunday</h1>
+        <script>
+            for (let year = 2014; year <= 2050; year++) {
+               let date = new Date(year, 0, 1);
+                if (date.getDay() === 0) {
+                 alert(`January 1st is a Sunday in ${year}`);
+                 }
+             }
+        </script>
+    </body>
+</html>

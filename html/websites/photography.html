@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Photography</title>
+    <style>
+        /* Overall styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Main styles */
+main {
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery img {
+  margin: 1rem;
+  width: 30%;
+  height: auto;
+  border: 2px solid #333;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.gallery img:hover {
+  filter: grayscale(0%);
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+.hidden {
+  display: none;
+}
+button{
+    text-align: center;
+}
+
+/* Button styles */
+
+
+    </style></head>
+<body>
+    <header>
+      <img src="photo.jpg" alt="Photography Company">
+    </header>
+    
+    <main>
+       <h1>Photography</h1>
+       <p><b>Photography is the art of capturing light with a camera, usually via a digital sensor or film, to create an image. With the right camera equipment, you can even photograph wavelengths of light invisible to the human eye, including UV, infrared, and radio.
+
+        The first permanent photograph was captured in 1826 (some sources say 1827) by Joseph Nicéphore Niépce in France.</b></p>
+       <button id="toggle-btn">Our Work</button>
+       
+      <div id="additional-info" class="gallery">
+        <img src="photo1.jpg" alt="Photo 1">
+        <img src="photo2.jpg" alt="Photo 2">
+        <img src="photo3.jpg" alt="Photo 3">
+        <img src="photo-4.jpg" alt="Photo 4">
+        <img src="photo5.jpg" alt="Photo 5">
+        
+      </div>
+      
+    </main>
+    
+    <footer>
+      <p>Contact us at: photography@email.com</p>
+    </footer>
+    <script>
+        const toggleBtn = document.getElementById("toggle-btn");
+      const additionalInfo = document.getElementById("additional-info");
+      
+      toggleBtn.addEventListener("click", function () {
+        additionalInfo.classList.toggle("hidden");
+        if (additionalInfo.classList.contains("hidden")) {
+          toggleBtn.innerHTML = "Our Work";
+        } else {
+          toggleBtn.innerHTML = "Show Less";
+        }
+      });
+    </script>
+  </body>
+  </html>
+  

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>guess number</title>
+    </head>
+    <body>
+        <h1>Guessing Game</h1>
+        <script>
+            // Generate a random integer between 1 and 10 (inclusive)
+             let randomNumber = Math.floor(Math.random() * 10) ;
+
+              // Prompt the user to input a guess number
+             let userGuess = prompt("Guess a number between 1 and 10");
+
+            // Check if the user's guess matches the random number
+             if (userGuess == randomNumber) {
+             console.log("Good Work");
+             } else {
+             console.log("Not matched");
+             }
+
+        </script>
+        
+    </body>
+</html>

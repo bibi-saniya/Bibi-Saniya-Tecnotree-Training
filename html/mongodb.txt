@@ -1,0 +1,5 @@
+rPPdAznCqzYHtOoy
+mongodb+srv://bibisaniya2503:<rPPdAznCqzYHtOoy>@cluster0.fewodha.mongodb.net/?retryWrites=true&w=majority
+
+mongo db connection using string:
+mongodb+srv://bibisaniya2503:rPPdAznCqzYHtOoy@cluster0.fewodha.mongodb.net/test

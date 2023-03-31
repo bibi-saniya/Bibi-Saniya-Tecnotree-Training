@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>13</title>
+    </head>
+    <style>
+       
+        .selected{
+           background-color: yellow;
+        }
+    </style>
+<body>
+<h1>Selection with background color</h1>
+    <ul id="list" >
+        <li>red</li>
+        <li>green</li>
+        <li>orange</li>
+        
+    </ul>
+
+    <script>
+       const listItems = document.querySelectorAll('#list li');
+
+        listItems.forEach(item => {
+        item.addEventListener('click', () => {
+        listItems.forEach(item => {
+            if (item.classList.contains('selected')) {
+        console.log(`Removed: ${item.innerText}`);
+      }
+      item.classList.remove('selected');
+    });
+    
+        
+        item.classList.add('selected');
+        console.log(`Selected: ${item.innerText}`);
+  });
+});
+
+
+    </script>
+
+</body>
+</html>

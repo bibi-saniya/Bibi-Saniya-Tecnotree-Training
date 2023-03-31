@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Sample Form</title>
+    <style>
+        body{
+            background-image: url("2.jpg");
+        }
+        form{
+            text-align: center;
+            font-size: 25px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Sample Form</h1>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required /><br><br>
+
+
+      <label for="gender">Gender:</label>
+      <input type="radio" id="male" name="gender" value="male" />
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="female">Female</label><br><br>
+
+      <label for="newsletter">Subscribe to Newsletter:</label>
+      <input type="checkbox" id="newsletter" name="newsletter" /><br><br>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea><br><br>
+
+      <button type="submit">Submit</button>
+      <button id="c">Exit</button>
+    </form>
+    <script>
+        var btn=document.getElementById("c");
+          btn.addEventListener("click",function(){
+            alert("Are you Sure");
+             //closing the tab
+           });
+        let form = document.querySelector('form');
+        let emailInput = document.getElementById('email');
+        let passwordInput = document.getElementById('password');
+        form.addEventListener('submit', function(event) {
+        if (!validateEmail(emailInput.value)) {
+    alert('Please enter a valid email address');
+    event.preventDefault();
+  }
+  if (!validatePassword(passwordInput.value)) {
+    alert('Please enter a password that is at least 8 characters long with at least one uppercase letter and one number');
+    event.preventDefault();
+  }
+});
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(String(email).toLowerCase());
+}
+
+function validatePassword(password) {
+  const re = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  return re.test(password);
+}
+
+
+
+
+    </script>
+  </body>
+</html>
