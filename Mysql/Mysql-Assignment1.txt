@@ -1,0 +1,198 @@
+1.Select employees first name, last name, job_id and salary whose first
+name starts with alphabet S
+
+SELECT first_name, last_name, job_id, salary
+FROM employees
+WHERE first_name LIKE 'S%';
+-------------------------------------------------------------------
+2.Write a query to select employee with the highest salary
+
+SELECT *
+FROM employees
+WHERE salary = (SELECT MAX(salary) FROM employees);
+
+--------------------------------------------------------------------------
+3. Select employee with the second highest salary
+
+SELECT *
+FROM employees
+WHERE salary = (
+    SELECT MAX(salary)
+    FROM employees
+    WHERE salary < (SELECT MAX(salary) FROM employees)
+);
+
+----------------------------------------------------------
+
+4. Fetch employees with 2nd or 3rd highest salary
+
+SELECT *
+FROM employees
+WHERE salary = (
+    SELECT salary
+    FROM employees
+    GROUP BY salary
+    ORDER BY salary DESC
+    LIMIT 1, 1
+) OR salary = (
+    SELECT salary
+    FROM employees
+    GROUP BY salary
+    ORDER BY salary DESC
+    LIMIT 2, 1
+);
+
+-------------------------------------------------------------
+
+5. Write a query to select employees and their corresponding managers
+and their salaries
+
+SELECT e1.first_name AS employee_first_name,
+       e1.last_name AS employee_last_name,
+       e1.salary AS employee_salary,
+       e2.first_name AS manager_first_name,
+       e2.last_name AS manager_last_name,
+       e2.salary AS manager_salary
+FROM employees e1
+INNER JOIN employees e2
+    ON e1.manager_id = e2.employee_id;
+-------------------------------------------------------------------
+
+6. Write a query to show count of employees under each manager in
+descending order
+
+SELECT e1.manager_id, e2.first_name AS manager_first_name, e2.last_name AS manager_last_name, COUNT(*) AS employee_count
+FROM employees e1
+INNER JOIN employees e2 ON e1.manager_id = e2.employee_id
+GROUP BY e1.manager_id, e2.first_name, e2.last_name
+ORDER BY employee_count DESC;
+
+-------------------------------------------------------------------------
+
+7. Find the count of employees in each department
+
+SELECT department_id, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department_id;
+
+-------------------------------------------------------------------------------
+
+8. Get the count of employees hired year wise
+
+SELECT YEAR(hire_date) AS hire_year, COUNT(*) AS employee_count
+FROM employees
+GROUP BY YEAR(hire_date);
+
+-----------------------------------------------------------------------------------
+
+9. Find the salary range of employees
+
+SELECT MIN(salary) AS min_salary, MAX(salary) AS max_salary
+FROM employees;
+
+----------------------------------------------------------------------------------
+10. Write a query to divide people into three groups based on their salaries
+
+SELECT 
+  first_name, 
+  last_name, 
+  salary,
+  CASE 
+    WHEN salary < 5000 THEN 'Group 1: Low earners'
+    WHEN salary >= 10000 AND salary < 15000 THEN 'Group 2: Medium earners'
+    ELSE 'Group 3: High earners'
+  END AS salary_group
+FROM employees;
+
+-------------------------------------------------------------------------------------
+
+
+11. Select the employees whose first_name contains “an”
+
+SELECT *
+FROM employees
+WHERE first_name LIKE '%an%';
+
+----------------------------------------------------------------------------------
+12. Select employee first name and the corresponding phone number in the
+format (_ _ _)-(_ _ _)-(_ _ _ _)
+
+SELECT first_name, CONCAT('(', SUBSTR(phone_number, 1, 3), ')-',
+                           '(',SUBSTR(phone_number, 5, 3), ')-',
+                           '(',SUBSTR(phone_number, 9, 4),')') AS formatted_phone
+FROM employees;
+------------------------------------------------------------
+
+13. Find the employees who joined in August, 1994.
+
+SELECT *
+FROM employees
+WHERE MONTH(hire_date) = 8 AND YEAR(hire_date) = 1994;
+
+------------------------------------------------------------------
+
+14. Write an SQL query to display employees who earn more than the
+average salary in that company
+
+SELECT *
+FROM employees
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM employees
+);
+
+(SELECT AVG(salary) AS average_salary
+FROM employees;)
+
+-------------------------------------------------------
+
+15. Find the maximum salary from each department.
+
+SELECT department_id, MAX(salary) AS max_salary
+FROM employees
+GROUP BY department_id;
+
+-------------------------------------------------------------------
+
+16. Write a SQL query to display the 5 least earning employees
+
+SELECT *
+FROM employees
+ORDER BY salary
+LIMIT 5;
+
+-------------------------------------------------------------------------
+
+17. Find the employees hired in the 80s
+
+SELECT *
+FROM employees
+WHERE YEAR(hire_date) BETWEEN 1980 AND 1989;
+
+---------------------------------------------------------------------------
+
+18. Display the employees first name and the name in reverse order
+
+SELECT first_name,last_name, CONCAT(REVERSE(first_name), ', ', REVERSE(last_name)) AS name_reverse
+FROM employees;
+
+----------------------------------------------------------------------------------------
+
+19. Find the employees who joined the company after 15th of the month
+
+SELECT *
+FROM employees
+WHERE DAY(hire_date) > 15;
+
+--------------------------------------------------------------------------------------------------
+
+20. Display the managers and the reporting employees who work in
+different departments
+
+SELECT m.first_name AS manager_first_name, m.last_name AS manager_last_name,
+       e.first_name AS employee_first_name, e.last_name AS employee_last_name
+FROM employees m
+INNER JOIN employees e ON m.employee_id = e.manager_id
+WHERE m.department_id <> e.department_id;
+
+-----------------------------------------------------------------------------------------------------------
