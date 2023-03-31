@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1</title>
+    </head>
+    <body>
+        <h1>Intersection of two arrays.</h1>
+        <p>
+            arr1 = [1, 2, 3, 4]<br>
+           arr2 = [3, 4, 5, 6]
+        </p>
+        <script>
+            function intersection(array1, array2) {
+           return array1.filter(value => array2.includes(value));
+            }
+            let arr1 = [1, 2, 3, 4];
+            let arr2 = [3, 4, 5, 6];
+
+             let intersect = intersection(arr1, arr2);
+             alert(intersect);
+             
+        </script>
+    </body>
+</html>

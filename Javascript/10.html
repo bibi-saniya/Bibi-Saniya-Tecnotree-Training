@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>10</title>
+    </head>
+    <body>
+        <h1> Merge Sort</h1>
+        <script>
+            function mergeSort(arr) {
+  
+                if (arr.length <= 1) {
+                    return arr;
+                 }
+
+  
+                const midIndex = Math.floor(arr.length / 2);
+                const leftHalf = mergeSort(arr.slice(0, midIndex));
+                const rightHalf = mergeSort(arr.slice(midIndex));
+
+  
+                return merge(leftHalf, rightHalf);
+            }
+
+            function merge(leftArr, rightArr) {
+                let i = 0;
+                let j = 0;
+                const mergedArr = [];
+                while (i < leftArr.length && j < rightArr.length) {
+                    if (leftArr[i] < rightArr[j]) {
+                        mergedArr.push(leftArr[i]);
+                        i++;
+                    } else {
+                        mergedArr.push(rightArr[j]);
+                        j++;
+                    }
+                }
+
+ 
+                while (i < leftArr.length) {
+                mergedArr.push(leftArr[i]);
+                i++;
+                }
+                while (j < rightArr.length) {
+                    mergedArr.push(rightArr[j]);
+                    j++;
+                }
+
+                return mergedArr;
+            }
+
+
+            const arr = [25, 1, 90, 6, 12, 14, 52];
+            alert("Unsorted Array : "+arr);
+            const sortedArr = mergeSort(arr);
+            alert("Sorted Array"+sortedArr); 
+
+ 
+
+
+
+        </script>
+    </body>
+</html>

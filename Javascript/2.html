@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2</title>
+    </head>
+    <body>
+        <h1>
+           Sorting an array
+        </h1>
+        <script>
+            function sortArray(array, property) {
+            return array.sort((a, b) => (a[property] > b[property]) ? 1 : ((b[property] > a[property]) ? -1 : 0));
+             }
+
+            const students = [
+            { name: 'Aristotle', age: 22 },
+           { name: 'Batson', age: 63},
+           { name: 'Chritopher', age: 45 },
+          { name: 'Queen', age: 15 }
+           ];
+
+               const sortedByAge = sortArray(students, 'age');
+           const sortedByName = sortArray(students, 'name');
+
+           console.log(JSON.stringify(students)); 
+          
+          alert(JSON.stringify(students));
+          
+        </script>
+    </body>
+</html>

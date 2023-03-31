@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>4</title>
+    </head>
+    <body>
+        <h1> nth Largest Element</h1>
+        <script>
+            function findNthLargest(array, n) {
+  
+            const sortedArray = array.sort((a, b) => b - a);
+  
+             // Return the nth largest element
+            return sortedArray[n - 1];
+            }
+            const myArray = [30, 6, 19, 4, 10];
+            alert(findNthLargest(myArray, 2));
+
+        </script>
+    </body>
+</html>

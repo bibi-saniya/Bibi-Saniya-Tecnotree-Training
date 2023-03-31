@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>6</title>
+    </head>
+    <body>
+        <h1>Reverse The Words</h1>
+
+        <script>
+           function reverseWords(str) {
+  
+           const wordsArr = str.split(' ');
+
+  
+           const reversedArr = wordsArr.reverse();
+
+           return reversedArr.join(' ');
+        }
+          const str = prompt("Enter your string");
+          const reversedStr = reverseWords(str);
+          alert(reversedStr); 
+
+        </script>
+    </body>
+</html>

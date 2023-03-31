@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>9</title>
+    </head>
+    <body>
+        <h1> First Non Repearing Character</h1>
+        <script>
+            function findFirstNonRepeatingChar(str) {
+ 
+                const charFreq = {};
+
+  
+                for (let i = 0; i < str.length; i++) {
+                    const char = str[i];
+                    if (charFreq[char]) {
+                        charFreq[char]++;
+                    } else {
+                        charFreq[char] = 1;
+                    }
+                }
+
+ 
+                for (let i = 0; i < str.length; i++) {
+                    const char = str[i];
+                    if (charFreq[char] === 1) {
+                        return char;
+                    }
+                }
+
+   
+                return null;
+            }
+
+
+            const str = prompt("Enter a string:");
+
+
+            const firstNonRepeatingChar = findFirstNonRepeatingChar(str);
+            if (firstNonRepeatingChar === null) {
+                alert("There are no non-repeating characters in the string.");
+            } else {
+                alert(`The first non-repeating character is: ${firstNonRepeatingChar}`);
+        }
+
+
+        </script>
+    </body>
+</html>
