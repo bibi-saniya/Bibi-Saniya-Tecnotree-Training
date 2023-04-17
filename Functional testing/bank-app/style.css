@@ -1,0 +1,73 @@
+body {
+	padding: 100px;
+  background-image: url("1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+}
+.submit-area {
+	border-radius: 10px;
+	padding: 40px;
+	box-shadow: 5px 5px 10px gray;
+	margin-top: 50px;
+}
+
+#transaction-area {
+	display: none;
+}
+.status{
+    margin: 0 20px;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.deposit {
+	background-color: slateblue;
+}
+.withdraw {
+	background-color: lightsalmon;
+}
+.balance {
+	background-color: orange;
+}
+
+#login-area{
+	background-image: url("1.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+  #personal-info p {
+    margin-bottom: 10px;
+  }
+
+  #personal-info strong {
+    margin-right: 10px;
+  }
+
+  #update-info {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #update-info:hover {
+    background-color: #0062cc;
+  }
+  #login-button{
+	background-color: rgb(67, 229, 240);
+	
+	
+  }
+  #login-button:hover{
+	background-color: #0062cc;
+  }
+#logout-button{
+	background-color: rgb(48, 100, 36);
+}
+#logout-button:hover{
+	background-color: #112d16;
+  }
+
